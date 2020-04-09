@@ -10,11 +10,11 @@ function provision_vault (){
    local TOKEN=$3
 
    export VAULT_ADDR=http://localhost:${PORT} 
-   vault login "${TOKEN}" 2>&1 >/dev/null
-   vault namespace lookup "${NAME}_NS1" 2>&1 >/dev/null || vault namespace create "${NAME}_NS1" 2>&1 >/dev/null
-   vault namespace lookup "${NAME}_NS2" 2>&1 >/dev/null || vault namespace create "${NAME}_NS2" 2>&1 >/dev/null
-   vault policy write -namespace="${NAME}_NS1" sudo sudo_policy.hcl 2>&1 >/dev/null
-   vault policy write -namespace="${NAME}_NS2" sudo sudo_policy.hcl 2>&1 >/dev/null
+   vault login "${TOKEN}" >/dev/null 2>&1
+   vault namespace lookup "${NAME}_NS1" >/dev/null 2>&1 || vault namespace create "${NAME}_NS1" >/dev/null 2>&1
+   vault namespace lookup "${NAME}_NS2" >/dev/null 2>&1 || vault namespace create "${NAME}_NS2" >/dev/null 2>&1
+   vault policy write -namespace="${NAME}_NS1" sudo sudo_policy.hcl >/dev/null 2>&1
+   vault policy write -namespace="${NAME}_NS2" sudo sudo_policy.hcl >/dev/null 2>&1
    NS2_T=$(vault token create -policy=sudo -ttl=24h -namespace="${NAME}_NS2" -orphan -display-name "SUDO_${NAME}_NS2" -format json)
    NS1_T=$(vault token create -policy=sudo -ttl=24h -namespace="${NAME}_NS1" -orphan -display-name "SUDO_${NAME}_NS1" -format json)
 
