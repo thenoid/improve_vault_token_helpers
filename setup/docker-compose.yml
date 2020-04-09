@@ -1,0 +1,22 @@
+version: '3'
+services:
+  vault1:
+    build: .
+    ports:
+      - 8200:8200
+  vault2:
+    build: .
+    ports:
+      - 2800:8200
+  #homebridge:
+    #image: oznu/homebridge:raspberry-pi
+    #working_dir: /var/homebridge
+    #restart: always
+    #network_mode: host
+    #volumes:
+      #- /var/homebridge/config:/homebridge
+    #environment:s
+      #- PGID=112
+      #- PUID=116
+      #- HOMEBRIDGE_CONFIG_UI=1
+      #- HOMEBRIDGE_CONFIG_UI_PORT=8080
