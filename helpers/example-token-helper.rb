@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+# Taken from https://www.vaultproject.io/docs/commands/token-helper
 
 require 'json'
 
