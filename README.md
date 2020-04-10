@@ -27,7 +27,7 @@ If your program succeeds, it should exit with status code 0. If it encounters an
 # The issue
 The issue is that the vault token helper interface is extremely simplistic and entirely designed around storing and retrieving a single token without context.  The "protocol" makes no attempt to provide information to the helper beyond "this is a token" or "give me a token". The context (vault address, namespace, etc) is not provided.
 
-Hashicorp's own example ruby script is congizant of this fact and tries to work around it by **inferring** information about what vault is being accessed via the `VAULT_ADDR` environment variable. However if the vault command line being run is utilizing the `-address` cli flag the vault helper is *blind* and can not divine any information.  The example script chooses to exit with a failure.
+Hashicorp's own example ruby script is cognizant of this fact and tries to work around it by **inferring** information about what vault is being accessed via the `VAULT_ADDR` environment variable. However if the vault command line being run is utilizing the `-address` cli flag the vault helper is *blind* and can not divine any information.  The example script chooses to exit with a failure.
 
 # Examples
 ## Setup and Setdown
