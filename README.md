@@ -59,20 +59,21 @@ This example shows the described limitations of the default helper and really th
 Token File Contents: /Users/bobdobbs/.vault-token
 vaultymcvaultface                                                                       
 
->VAULT_ADDR=http://127.0.0.1:8200 VAULT_NAMESPCE=vault1_NS1 ./default_vault_helper.sh login s.bSerxNYBDN7k1IGKa4d1Eb4X.cR23H
+> VAULT_ADDR=http://127.0.0.1:8200 VAULT_NAMESPCE=vault1_NS1 ./default_vault_helper.sh login s.bSerxNYBDN7k1IGKa4d1Eb4X.cR23H
 ... Ommited ...
 
 Token File Contents: /Users/bobdobbs/.vault-token
 s.bSerxNYBDN7k1IGKa4d1Eb4X.cR23H                                               
 
->VAULT_ADDR=http://127.0.0.1:2800 VAULT_NAMESPCE=vault2_NS1 ./default_vault_helper.sh login s.uQarBs9bca6
+> VAULT_ADDR=http://127.0.0.1:2800 VAULT_NAMESPCE=vault2_NS1 ./default_vault_helper.sh login s.uQarBs9bca6
 YDCvUBYXreePz.Oiydu
 ... Ommited ...
 
 Token File Contents: /Users/bobdobbs/.vault-token
 s.uQarBs9bca6YDCvUBYXreePz.Oiydu%                                               
 
-> VAULT_ADDR=http://127.0.0.1:2800 VAULT_NAMESPCE=vault2_NS1 ./default_vault_helper.sh token lookupKey                 Value
+> VAULT_ADDR=http://127.0.0.1:2800 VAULT_NAMESPCE=vault2_NS1 ./default_vault_helper.sh token lookup
+Key                 Value
 ---                 -----
 accessor            4Hp8MNkQ7MtNmC7nH0g7BB3V.Oiydu
 creation_time       1586480594
@@ -96,7 +97,7 @@ type                service
 Token File Contents: /Users/bobdobbs/.vault-token
 s.uQarBs9bca6YDCvUBYXreePz.Oiydu%                                                   
 
->VAULT_ADDR=http://127.0.0.1:8200 VAULT_NAMESPCE=vault1_NS1 ./default_vault_helper.sh token lookupError looking up token: Error making API request.
+> VAULT_ADDR=http://127.0.0.1:8200 VAULT_NAMESPCE=vault1_NS1 ./default_vault_helper.sh token lookupError looking up token: Error making API request.
 
 URL: GET http://127.0.0.1:8200/v1/auth/token/lookup-self
 Code: 403. Errors:
