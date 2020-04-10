@@ -26,3 +26,4 @@ function provision_vault (){
 
 provision_vault "${VAULT1_PORT}" "vault1" "${VT}"
 provision_vault "${VAULT2_PORT}" "vault2" "${VT}"
+exit 0
