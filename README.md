@@ -56,20 +56,20 @@ This example shows the described limitations of the default helper and really th
 > VAULT_ADDR=http://127.0.0.1:8200 ./default_vault_helper.sh login vaultymcvaultface
 ... Ommited ...
 
-Token File Contents: /Users/rolsen/.vault-token
+Token File Contents: /Users/bobdobbs/.vault-token
 vaultymcvaultface                                                                       
 
 >VAULT_ADDR=http://127.0.0.1:8200 VAULT_NAMESPCE=vault1_NS1 ./default_vault_helper.sh login s.bSerxNYBDN7k1IGKa4d1Eb4X.cR23H
 ... Ommited ...
 
-Token File Contents: /Users/rolsen/.vault-token
+Token File Contents: /Users/bobdobbs/.vault-token
 s.bSerxNYBDN7k1IGKa4d1Eb4X.cR23H                                               
 
 >VAULT_ADDR=http://127.0.0.1:2800 VAULT_NAMESPCE=vault2_NS1 ./default_vault_helper.sh login s.uQarBs9bca6
 YDCvUBYXreePz.Oiydu
 ... Ommited ...
 
-Token File Contents: /Users/rolsen/.vault-token
+Token File Contents: /Users/bobdobbs/.vault-token
 s.uQarBs9bca6YDCvUBYXreePz.Oiydu%                                               
 
 > VAULT_ADDR=http://127.0.0.1:2800 VAULT_NAMESPCE=vault2_NS1 ./default_vault_helper.sh token lookupKey                 Value
@@ -93,7 +93,7 @@ renewable           true
 ttl                 23h52m36s
 type                service
 
-Token File Contents: /Users/rolsen/.vault-token
+Token File Contents: /Users/bobdobbs/.vault-token
 s.uQarBs9bca6YDCvUBYXreePz.Oiydu%                                                   
 
 >VAULT_ADDR=http://127.0.0.1:8200 VAULT_NAMESPCE=vault1_NS1 ./default_vault_helper.sh token lookupError looking up token: Error making API request.
@@ -103,7 +103,7 @@ Code: 403. Errors:
 
 * permission denied
 
-Token File Contents: /Users/rolsen/.vault-token
+Token File Contents: /Users/bobdobbs/.vault-token
 s.uQarBs9bca6YDCvUBYXreePz.Oiydu
 ```
 
@@ -115,7 +115,7 @@ This example utilizes the Hashicorp's ruby example.  While it preforms "better" 
 > VAULT_ADDR=http://127.0.0.1:8200 ./ruby_vault_helper.sh login vaultymcvaultface
 ... Ommited ...
 
-Token File Contents: /Users/rolsen/.vault_tokens
+Token File Contents: /Users/bobdobbs/.vault_tokens
 {
   "http://127.0.0.1:8200": "vaultymcvaultface"
 }
@@ -123,7 +123,7 @@ Token File Contents: /Users/rolsen/.vault_tokens
 > VAULT_ADDR=http://127.0.0.1:2800 ./ruby_vault_helper.sh login vaultymcvaultface
 ... Ommited ...
 
-Token File Contents: /Users/rolsen/.vault_tokens
+Token File Contents: /Users/bobdobbs/.vault_tokens
 {
   "http://127.0.0.1:8200": "vaultymcvaultface",
   "http://127.0.0.1:2800": "vaultymcvaultface"
@@ -132,7 +132,7 @@ Token File Contents: /Users/rolsen/.vault_tokens
 > VAULT_ADDR=http://127.0.0.1:8200 ./ruby_vault_helper.sh login -namespace=vault1_NS2 s.jg8LC0CQw0ljtO8vt12cUcxy.b7MBy
 ... Ommited ...
 
-Token File Contents: /Users/rolsen/.vault_tokens
+Token File Contents: /Users/bobdobbs/.vault_tokens
 {
   "http://127.0.0.1:8200": "s.jg8LC0CQw0ljtO8vt12cUcxy.b7MBy",
   "http://127.0.0.1:2800": "vaultymcvaultface"
@@ -147,7 +147,7 @@ Here we see that the crystal ball lies to the token helper, thought `VAULT_ADDR`
 2cUcxy.b7MBy    
 ... Ommited ...
 
-Token File Contents: /Users/rolsen/.vault_tokens
+Token File Contents: /Users/bobdobbs/.vault_tokens
 {
   "http://127.0.0.1:8200": "s.jg8LC0CQw0ljtO8vt12cUcxy.b7MBy"
 }
@@ -155,7 +155,7 @@ Token File Contents: /Users/rolsen/.vault_tokens
 > VAULT_ADDR=http://127.0.0.1:8200 ./ruby_vault_helper.sh login -address=http://127.0.0.1:2800 -namespace=vault2_NS2 s.Sl90TFdir5znKYJ8wLyggFPh.CanGc
 ... Ommited ...
 
-Token File Contents: /Users/rolsen/.vault_tokens
+Token File Contents: /Users/bobdobbs/.vault_tokens
 {
   "http://127.0.0.1:8200": "s.Sl90TFdir5znKYJ8wLyggFPh.CanGc"
 }
@@ -182,7 +182,7 @@ renewable           true
 ttl                 23h29m32s
 type                service
 
-Token File Contents: /Users/rolsen/.vault_tokens
+Token File Contents: /Users/bobdobbs/.vault_tokens
 {
   "http://127.0.0.1:8200": "s.Sl90TFdir5znKYJ8wLyggFPh.CanGc"
 }
@@ -195,7 +195,7 @@ Code: 403. Errors:
 
 * permission denied
 
-Token File Contents: /Users/rolsen/.vault_tokens
+Token File Contents: /Users/bobdobbs/.vault_tokens
 {
   "http://127.0.0.1:8200": "s.Sl90TFdir5znKYJ8wLyggFPh.CanGc"
 }
